@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('./index.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+.header {
+    width: 100%;
+    background: rgba(9, 30, 30, 1);
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+}
+.logo img {
+    height: 40px;
+    margin-left: 20px;
+}
+.nav {
+    display: flex;
+    align-items: center;
+}
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.search-bar input {
+    width: 210px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+.search-bar button {
+    padding: 5px 10px;
+    background-color: #1a3c3c;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+.search-bar button:hover {
+    background-color: #2e6464;
+}
+.content {
+    margin-top: 80px;
+    text-align: center;
+}
+.content h1 {
+    font-size: 4rem;
+    text-align: left;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+.content p {
+    font-size: 1.2rem;
+    text-align: left;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.content button {
+    background-color: #048282;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.content button:hover {
+    background-color: #2e6464;
+}
+
+.about-us, .our-team {
+    padding: 20px;
+    text-align: center;
+}
+
+.about-us h1, .our-team h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-size: 16px;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+.our-team .team-members {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.member {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.member img {
+    border-radius: 50%;
+}
+
+.member .title {
+    background-color: #007bff; 
+    color: white; 
+    padding: 5px 10px; 
+    border-radius: 5px;
+}
+
+.fill{
+    width: 400px;
+}

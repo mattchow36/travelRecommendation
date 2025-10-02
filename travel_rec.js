@@ -1,43 +1,45 @@
-//const addPatientButton = document.getElementById("addPatient");
-//const report = document.getElementById("report");
+
 const btnSearch = document.getElementById('btnSearch');
+const btnClear = document.getElementById('btnClear');
 const rec = [];
-
-function resetSearch() {
-      document.getElementById("searchInput").placeholder = "Enter 'beach', 'temple', or 'country";
-      document.getElementById("s1-i").src = "";
-      document.getElementById("s1-h2").textContent = "";
-      document.getElementById("s1-p").textContent = "";
-      document.getElementById("s2-i").src = "";
-      document.getElementById("s2-h2").textContent = "";
-      document.getElementById("s2-p").textContent = "";
-    }    
-
-btnSearch.addEventListener('click', resetSearch);
 
 function search() {
     const input = document.getElementById('searchInput').value.toLowerCase();
-
     fetch('./travel_rec.json')
       .then(response => response.json())
       .then(data => {
-
         if (input == "country") {
-          console.log("Recommendation found!");
-          const symptoms = condition.symptoms.join(', ');
-          const prevention = condition.prevention.join(', ');
-          const treatment = condition.treatment;
+            console.log("Recommendation found!");
+            const seed = Math.floor(Math.random() * 3);
+            document.getElementById("rec_1").innerHTML = ""
+            document.getElementById("rec_2").innerHTML = ""
+            document.getElementById("rec_1").innerHTML += `<img style="width: 300px; height: 170px; object-fit: cover;" src="${data.countries[seed].cities[0].imageUrl}" alt=".">`
+            document.getElementById("rec_1").innerHTML += `<h2>${data.countries[seed].cities[0].name}<h2>`
+            document.getElementById("rec_1").innerHTML += `<p style="font-size: 0.9rem">${data.countries[seed].cities[0].description}<p>`
+            document.getElementById("rec_2").innerHTML += `<img style="width: 300px; height: 170px; object-fit: cover;" src="${data.countries[seed].cities[1].imageUrl}" alt=".">`
+            document.getElementById("rec_2").innerHTML += `<h2>${data.countries[seed].cities[0].name}<h2>`
+            document.getElementById("rec_2").innerHTML += `<p style="font-size: 0.9rem">${data.countries[seed].cities[0].description}<p>`
 
-          resultDiv.innerHTML += `<h2>${condition.name}</h2>`;
-          resultDiv.innerHTML += `<img src="${condition.imagesrc}" alt="hjh">`;
-
-          resultDiv.innerHTML += `<p><strong>Symptoms:</strong> ${symptoms}</p>`;
-          resultDiv.innerHTML += `<p><strong>Prevention:</strong> ${prevention}</p>`;
-          resultDiv.innerHTML += `<p><strong>Treatment:</strong> ${treatment}</p>`;
         } else if (input == "temple"){
-
+            document.getElementById("rec_1").innerHTML = ""
+            document.getElementById("rec_2").innerHTML = ""
+            document.getElementById("rec_1").innerHTML += `<img style="width: 300px; height: 170px; object-fit: cover;" src="${data.temples[0].imageUrl}" alt=".">`
+            document.getElementById("rec_1").innerHTML += `<h2>${data.temples[0].name}<h2>`
+            document.getElementById("rec_1").innerHTML += `<p style="font-size: 0.9rem">${data.temples[0].description}<p>`
+            document.getElementById("rec_1").innerHTML += `<img style="width: 300px; height: 170px; object-fit: cover;" src="${data.temples[1].imageUrl}" alt=".">`
+            document.getElementById("rec_1").innerHTML += `<h2>${data.temples[1].name}<h2>`
+            document.getElementById("rec_1").innerHTML += `<p style="font-size: 0.9rem">${data.temples[1].description}<p>`
+        
         } else if (input == "beach"){
-
+            console.log("Recommendation found!");
+            document.getElementById("rec_1").innerHTML = ""
+            document.getElementById("rec_2").innerHTML = ""
+            document.getElementById("rec_1").innerHTML += `<img style="width: 300px; height: 170px; object-fit: cover;" src="${data.beaches[0].imageUrl}" alt=".">`
+            document.getElementById("rec_1").innerHTML += `<h2>${data.beaches[0].name}<h2>`
+            document.getElementById("rec_1").innerHTML += `<p style="font-size: 0.9rem">${data.beaches[0].description}<p>`
+            document.getElementById("rec_1").innerHTML += `<img style="width: 300px; height: 170px; object-fit: cover;" src="${data.beaches[1].imageUrl}" alt=".">`
+            document.getElementById("rec_1").innerHTML += `<h2>${data.beaches[1].name}<h2>`
+            document.getElementById("rec_1").innerHTML += `<p style="font-size: 0.9rem">${data.beaches[1].description}<p>`
         } else {
             console.log("NO Recommendation found!");
         }
@@ -48,4 +50,13 @@ function search() {
       });
   }
 
-  btnSearch.addEventListener('click', btnSearch);
+btnSearch.addEventListener('click', search);
+
+
+function resetSearch() {
+    document.getElementById("searchInput").value = "";
+    document.getElementById("rec_1").innerHTML = ""
+    document.getElementById("rec_2").innerHTML = ""
+  }    
+
+btnClear.addEventListener('click', resetSearch);

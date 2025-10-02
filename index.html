@@ -16,28 +16,30 @@
             <a href="./aboutUs.html">About Us</a>
             <a href="./contactUs">Contact Us</a>
         </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Enter a destination or keyword">
-            <button>Search</button>
-            <button>Clear</button>
+        <div class="search-bar", id="search">
+            <input id="searchInput", type="text" placeholder="Enter 'beach', 'temple', or 'country">
+            <button id="btnSearch">Search</button>
+            <button id="btnClear">Clear</button>
         </div>
     </div>
     <div class="content">
-        <h1>Explore<br>Dream<br>Destination</h1>
-        <p>It encourages exploration of unfamiliar territories, embracing diverse cultures and landscapes, while pursuing the desired destination that captivates the heart and ignites a sense of wonder.</p>
-        <button>Book Now</button>
-    </div>
-    <div class = "rec">
-        <section>
-            <img src="./logo.jpg" alt=".">
-            <p></p>
-            <p></p>
-        </section>
-        <section>
-            <img src="./logo.jpg" alt=".">
-            <p></p>
-            <p></p>
-        </section>
+        <div class="book">
+            <h1>Explore<br>Dream<br>Destination</h1>
+            <p>It encourages exploration of unfamiliar territories, embracing diverse cultures and landscapes, while pursuing the desired destination that captivates the heart and ignites a sense of wonder.</p>
+            <button>Book Now</button>
+        </div>
+        <div class = "rec">
+            <section>
+                <img id="s1-i", src="" alt=".">
+                <h2 id="s1-h2"></h2>
+                <p id="s1-p"></p>
+            </section>
+            <section>
+                <img id="s2-i", src="" alt=".">
+                <h2 id="s2-h2"></h2>
+                <p id="s2-p"></p>
+            </section>
+        </div>
     </div>
     <script src="./travel_rec.js"></script>
 </body>

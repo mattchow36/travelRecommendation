@@ -55,9 +55,23 @@ body {
     background-color: #2e6464;
 }
 .content {
+    display: flex;
     margin-top: 80px;
     text-align: center;
 }
+
+.content .rec {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+}
+
+.content .rec section{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+}
+
 .content h1 {
     font-size: 4rem;
     text-align: left;
